@@ -4,11 +4,13 @@ Final Project, I created a code in which a moon
 decends into the night and becomes a sun that also
 decends into the day.
 Completed 10/5/2018
-https://tocodeortogetacookie.wordpress.com/2018/10/05/final-project-i-made-it/*/
+https://tocodeortogetacookie.wordpress.com/2018/10/05/final-project-i-made-it/
+*/
 function setup() { 
   createCanvas(600, 400);
 
-  for (var i = 0; i < 300; i++) {//setting variables for stars location
+  //setting variables for stars location
+  for (var i = 0; i < 300; i++) {
     var x = random(width);
     var y = random(height);
     var r = random(1, 1);
@@ -21,7 +23,7 @@ function setup() {
 function draw() {
 
   if (moon.x < width && moon.y < height) { //setting condition for moon and it's background
-    background(0, 0, 70);
+    background(0,0,70+moon.y*.5);
     for (var i = 0; i < star.length; i++) {
       star[i].move();
       star[i].show();
@@ -30,7 +32,7 @@ function draw() {
 
   } else { //setting condition for sun's background
 
-    background(245, 245, 245);
+    background(245-sun.y*.50,245-sun.y*.50,245-sun.y*.15);
     tree(400,200,150); //declaration of the tree as a function
 
   }
